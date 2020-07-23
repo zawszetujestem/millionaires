@@ -1,5 +1,5 @@
 from player import Player
-
+from questions import Question
 
 class Game:
     def __init__(self, questions, gui):
@@ -10,13 +10,14 @@ class Game:
         self.question_no = 1
 
     def play(self):
-        self.name = Player
-        self.name = input("Enter your name:\n")
+        self.name = Player('Maniek')
+        # self.name = input("Enter your name:\n")
 
         self.gui.welcome(self.name)
 
         self.gui.show_dashboard(self.question_no, self.guaranteed_levels, self.money_level)
-
+        self.questions.fifty_fifty_wheel()
+        self.gui.show_question(self.questions.question, self.questions.answers)
         # while True:
         #
         #     if True:
