@@ -33,10 +33,10 @@ class Gui:
 
     @staticmethod
     def get_user_lifeline(lifelines, lifelines_done):
-        lifelines_list = lifelines
-        for idx, lifeline in enumerate(lifelines_list):
+        lifelines_list = []
+        for idx, lifeline in enumerate(lifelines):
             if lifeline not in lifelines_done:
-                lifelines_list.append(f"{idx}. {lifeline}")
+                lifelines_list.append(f"{idx + 1}. {lifeline} \n")
         lifeline_text = '\n'.join(lifelines_list)
         return input(f"Choose lifelines: \n {lifeline_text}")
 
