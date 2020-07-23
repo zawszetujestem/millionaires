@@ -18,3 +18,32 @@ class Gui:
         for idx, item in enumerate(answers_letter):
             print(f"{item}. {answers[idx]}")
             print('-' * 30)
+
+    @staticmethod
+    def player_options():
+        return input("""What you want to do:
+        1. Final answer
+        2. Get lifeline
+        3. End game
+        """)
+
+    @staticmethod
+    def get_player_answer():
+        return input("Choose your answer [A, B, C, D]: \n")
+
+    @staticmethod
+    def get_user_lifeline(lifelines, lifelines_done):
+        lifelines_list = lifelines
+        for idx, lifeline in enumerate(lifelines_list):
+            if lifeline not in lifelines_done:
+                lifelines_list.append(f"{idx}. {lifeline}")
+        lifeline_text = '\n'.join(lifelines_list)
+        return input(f"Choose lifelines: \n {lifeline_text}")
+
+    @staticmethod
+    def play_again():
+        return input("Do you want to play again? [Y/N] \n")
+
+    @staticmethod
+    def show_result(score):
+        print(f"You win {score}. Congrats! Game over.")
